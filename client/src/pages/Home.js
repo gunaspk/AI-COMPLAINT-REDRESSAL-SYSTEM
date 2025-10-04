@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FileText, Search, Trophy, Brain, Zap, MapPin, MessageSquare, TrendingUp, UserX } from 'lucide-react';
 import { complaintAPI } from '../api/complaintAPI';
-import './Home.css';
+import './Home.enhanced.css';
 
 const Home = () => {
   const [stats, setStats] = useState({ total: 0, submitted: 0, in_progress: 0, resolved: 0 });
