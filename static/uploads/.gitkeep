@@ -1,0 +1,5 @@
+# This directory stores uploaded complaint images
+# Images are automatically saved here when users submit complaints
+# Format: YYYYMMDD_HHMMSS_originalfilename.ext
+
+.gitkeep

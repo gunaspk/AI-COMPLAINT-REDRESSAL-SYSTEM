@@ -1,0 +1,7 @@
+flask==3.0.0
+flask-cors==4.0.0
+werkzeug==3.0.1
+pillow==10.1.0
+# twilio==8.10.0  # Uncomment for WhatsApp integration
+# tensorflow==2.15.0  # Uncomment for AI image classification
+# transformers==4.36.0  # Uncomment for HuggingFace models
