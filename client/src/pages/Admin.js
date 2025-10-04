@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Filter, Search, Play, Check, Eye, RefreshCw } from 'lucide-react';
 import { complaintAPI } from '../api/complaintAPI';
-import './Admin.css';
+import './Admin.enhanced.css';
 
 const Admin = () => {
   const [complaints, setComplaints] = useState([]);

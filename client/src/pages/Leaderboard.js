@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Trophy, TrendingUp } from 'lucide-react';
+import { Trophy, TrendingUp, Award } from 'lucide-react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 import { complaintAPI } from '../api/complaintAPI';
+import './Leaderboard.enhanced.css';
 import './Leaderboard.css';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);

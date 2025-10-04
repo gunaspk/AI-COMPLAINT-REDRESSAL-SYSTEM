@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Search, CheckCircle, Clock, Loader } from 'lucide-react';
 import { complaintAPI } from '../api/complaintAPI';
-import './TrackComplaint.css';
+import './TrackComplaint.enhanced.css';
 
 const TrackComplaint = () => {
   const { id } = useParams();

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Upload, MapPin, Check, AlertCircle } from 'lucide-react';
 import { MapContainer, TileLayer, Marker, useMapEvents } from 'react-leaflet';
 import { complaintAPI } from '../api/complaintAPI';
-import './FileComplaint.css';
+import './FileComplaint.enhanced.css';
 import 'leaflet/dist/leaflet.css';
 
 const FileComplaint = () => {
