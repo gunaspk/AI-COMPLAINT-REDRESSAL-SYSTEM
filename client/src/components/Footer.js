@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram } from 'lucide-react';
+import Logo from './Logo';
 import './Footer.css';
 
 const Footer = () => {
@@ -8,8 +9,10 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3>🏛️ AI Complaint Redressal System</h3>
-            <p>Empowering Citizens Through Technology</p>
+            <Logo size={50} color="white" showText={true} />
+            <p style={{ marginTop: '0.75rem', fontSize: '0.9rem', opacity: '0.85' }}>
+              Empowering Citizens Through Technology
+            </p>
           </div>
           
           <div className="footer-section">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, FileText, Search, Trophy, Shield, Home } from 'lucide-react';
+import Logo from './Logo';
 import './Navbar.enhanced.css';
 
 const Navbar = () => {
@@ -28,8 +29,8 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="nav-brand">
-          <span className="brand-icon">🤖</span>
-          AI Complaint System
+          <Logo size={42} color="white" showText={false} />
+          <span style={{ marginLeft: '0.5rem', fontWeight: '700' }}>AI Complaint System</span>
         </Link>
 
         <button 

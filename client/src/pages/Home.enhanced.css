@@ -34,6 +34,30 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
+.pulse-logo {
+  animation: logoFloat 3s ease-in-out infinite, fadeInScale 1s ease-out;
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
