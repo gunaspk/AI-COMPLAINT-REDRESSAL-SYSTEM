@@ -1,7 +1,48 @@
+# Core Flask Framework
 flask==3.0.0
 flask-cors==4.0.0
 werkzeug==3.0.1
+
+# Image Processing
 pillow==10.1.0
-# twilio==8.10.0  # Uncomment for WhatsApp integration
-# tensorflow==2.15.0  # Uncomment for AI image classification
-# transformers==4.36.0  # Uncomment for HuggingFace models
+
+# Database (SQLite is built-in with Python)
+
+# Optional: WhatsApp Integration
+# twilio==8.10.0  # Uncomment for Twilio WhatsApp bot
+
+# Optional: Advanced AI/ML Features
+# tensorflow==2.15.0  # Uncomment for deep learning image classification
+# torch==2.1.0  # Uncomment for PyTorch models
+# transformers==4.36.0  # Uncomment for HuggingFace NLP models
+# opencv-python==4.8.1  # Uncomment for advanced computer vision
+# scikit-learn==1.3.2  # Uncomment for ML algorithms
+
+# Optional: Natural Language Processing
+# nltk==3.8.1  # Uncomment for text analysis
+# spacy==3.7.2  # Uncomment for advanced NLP
+
+# Optional: API Documentation
+# flask-swagger-ui==4.11.1  # Uncomment for Swagger API docs
+# flasgger==0.9.7.1  # Uncomment for automatic API documentation
+
+# Optional: Authentication & Security
+# flask-jwt-extended==4.5.3  # Uncomment for JWT authentication
+# flask-bcrypt==1.0.1  # Uncomment for password hashing
+
+# Optional: Database Migrations
+# flask-migrate==4.0.5  # Uncomment for database version control
+# flask-sqlalchemy==3.1.1  # Uncomment for ORM instead of raw SQL
+
+# Optional: Task Queue
+# celery==5.3.4  # Uncomment for background tasks
+# redis==5.0.1  # Uncomment for caching and task queue
+
+# Optional: Email Notifications
+# flask-mail==0.9.1  # Uncomment for email support
+
+# Optional: Rate Limiting
+# flask-limiter==3.5.0  # Uncomment for API rate limiting
+
+# Development Tools
+# python-dotenv==1.0.0  # Uncomment for environment variables management
