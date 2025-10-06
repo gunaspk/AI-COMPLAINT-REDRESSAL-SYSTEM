@@ -1,0 +1,60 @@
+def handle_image_message(from_number, image_data, message_id):
+    """AI-powered image analysis"""
+    image_id = image_data.get("id")
+    caption = image_data.get("caption", "")
+    
+    # Send immediate acknowledgment
+    send_reaction(from_number, message_id, "📸")
+    
+    # Simulate AI detection (replace with actual ML model)
+    detected_issue = detect_issue_from_image(image_id)  # Your ML function
+    
+    if detected_issue == "pothole":
+        response = """🕳️ *Pothole Detected!*
+
+*AI Analysis Results:*
+✅ Issue: Pothole (92% confidence)
+📏 Size: Medium (Est. 30cm width)
+⚠️ Severity: High risk
+📍 Next: Share your location
+
+*Complaint will auto-generate* once location received!"""
+    
+    elif detected_issue == "streetlight":
+        response = """💡 *Streetlight Issue Detected!*
+
+*AI Analysis Results:*
+✅ Issue: Non-functional streetlight
+🔋 Type: LED pole light
+⚠️ Impact: Safety concern
+📍 Next: Share exact location
+
+*Routing to Electricity Department...*"""
+    
+    elif detected_issue == "garbage":
+        response = """🗑️ *Garbage Issue Detected!*
+
+*AI Analysis Results:*
+✅ Issue: Waste accumulation
+📊 Severity: Moderate
+🏠 Type: Residential area waste
+📍 Next: Confirm location
+
+*Notifying Waste Management...*"""
+    
+    else:
+        response = """📸 *Image Received*
+
+*Processing with AI...*
+⏳ Analyzing issue type
+🔍 Detecting severity level
+📍 Please share your location
+
+Your complaint will be categorized automatically!"""
+    
+    send_text_message(from_number, response)
+
+def detect_issue_from_image(image_id):
+    """Placeholder for ML model - replace with actual detection"""
+    import random
+    return random.choice(["pothole", "streetlight", "garbage", "unknown"])
