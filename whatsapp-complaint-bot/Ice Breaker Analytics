@@ -1,0 +1,13 @@
+# Add to handle_text_message function
+ice_breaker_clicks = {
+    "report problem": 0,
+    "check status": 0,
+    "emergency issue": 0,
+    "get help": 0
+}
+
+def track_ice_breaker(text_lower):
+    if text_lower in ice_breaker_clicks:
+        ice_breaker_clicks[text_lower] += 1
+        logging.info(f"Ice breaker clicked: {text_lower} (Total: {ice_breaker_clicks[text_lower]})")
+

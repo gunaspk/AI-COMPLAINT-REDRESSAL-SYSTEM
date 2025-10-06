@@ -1,0 +1,76 @@
+def handle_text_message(from_number, text, message_id):
+    """Handle ice breaker responses"""
+    text_lower = text.lower().strip()
+    
+    # Ice Breaker 1: Report Problem
+    if text_lower == "report problem":
+        response = """📋 *File New Complaint*
+
+*Problem Types:*
+🕳️ Pothole - Road damage
+💡 Streetlight - Not working
+🗑️ Garbage - Waste issue
+
+*To file complaint:*
+1. Send photo of issue
+2. Share your location
+3. Add brief description
+
+AI will auto-detect and categorize!"""
+        
+        send_text_message(from_number, response)
+    
+    # Ice Breaker 2: Check Status
+    elif text_lower == "check status":
+        response = """🔍 *Complaint Status Tracking*
+
+Send your Complaint ID
+Example: CMP-20251005-123
+
+*Don't have ID?*
+• Type 'my complaints' - See your list
+• Type 'recent' - Last complaint
+
+Reply with your ID to continue"""
+        
+        send_text_message(from_number, response)
+    
+    # Ice Breaker 3: Emergency Issue
+    elif text_lower == "emergency issue":
+        response = """🚨 *EMERGENCY COMPLAINT*
+
+For critical issues only:
+⚠️ Accident risk potholes
+⚠️ Complete area darkness
+⚠️ Health hazard waste
+
+*Immediate Action Protocol:*
+Response time: 2 hours max
+Priority: HIGHEST
+
+Send photo + location NOW!"""
+        
+        send_text_message(from_number, response)
+    
+    # Ice Breaker 4: Get Help
+    elif text_lower == "get help":
+        response = """ℹ️ *Help & Commands*
+
+*Quick Actions:*
+• Report Problem - File complaint
+• Check Status - Track complaint
+• Emergency Issue - Urgent cases
+
+*Complaint Types:*
+🕳️ Potholes
+💡 Streetlights
+🗑️ Garbage
+
+*Need assistance?*
+Call: 1800-XXX-XXXX
+Email: help@complaints.gov"""
+        
+        send_text_message(from_number, response)
+    
+    # Continue with other command handling...
+

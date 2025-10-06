@@ -1,0 +1,123 @@
+def handle_text_message(from_number, text, message_id):
+    """Enhanced complaint management commands"""
+    text_lower = text.lower().strip()
+    
+    # Welcome commands
+    if text_lower in ["hello", "hi", "hey", "start"]:
+        response = """🚀 *AI-Driven Complaint Management System*
+
+Report civic issues instantly:
+
+🕳️ *Potholes* - Road damage & safety hazards
+💡 *Streetlights* - Broken/dim lighting issues  
+🗑️ *Garbage* - Waste collection problems
+
+*Quick Commands:*
+• Type *complaint* to file issue
+• Type *status* for updates
+• Type *help* for options
+
+How can I help you today?"""
+        
+        send_reaction(from_number, message_id, "🚀")
+        send_text_message(from_number, response)
+    
+    # File complaint
+    elif text_lower == "complaint":
+        response = """📋 *File New Complaint*
+
+Please provide:
+1️⃣ *Photo* of the issue
+2️⃣ *Location* (share/send address)
+3️⃣ *Brief description*
+
+*AI Auto-Detection:*
+✅ Pothole detection from images
+✅ Streetlight analysis
+✅ Garbage identification
+
+Send your photo first! 📸"""
+        
+        send_text_message(from_number, response)
+    
+    # Check status
+    elif text_lower in ["status", "track"]:
+        response = """🔍 *Check Complaint Status*
+
+Send your *Complaint ID*
+Format: CMP-20251005-ABC123
+
+*Or try these:*
+• *my complaints* - See all your issues
+• *recent* - Last 5 complaints
+• *urgent* - Priority complaints only"""
+        
+        send_text_message(from_number, response)
+    
+    # Emergency/Urgent
+    elif text_lower == "urgent":
+        response = """🚨 *Emergency Complaint*
+
+For immediate attention:
+• Road accident due to pothole
+• Complete darkness (no streetlights)
+• Health hazard garbage
+
+Please send:
+📸 *Photo + exact location*
+
+Response time: *2 hours maximum*"""
+        
+        send_text_message(from_number, response)
+    
+    # Help menu
+    elif text_lower == "help":
+        response = """ℹ️ *Help Center*
+
+*🔸 Commands:*
+• *hello* - Welcome message
+• *complaint* - File new issue
+• *status* - Track complaints
+• *urgent* - Emergency reports
+
+*🔸 Issue Types:*
+• 🕳️ Potholes - Road damage
+• 💡 Streetlights - Lighting issues
+• 🗑️ Garbage - Waste problems
+
+*🔸 Contact:*
+📞 Emergency: 108
+📧 Support: help@complaints.gov"""
+        
+        send_text_message(from_number, response)
+    
+    # Check complaint by ID
+    elif text_lower.startswith("cmp-"):
+        complaint_id = text.upper()
+        response = f"""📋 *Complaint Status*
+
+🆔 ID: {complaint_id}
+📂 Type: Pothole
+📍 Area: MG Road, Bangalore
+⏳ Status: *In Progress*
+👨‍🔧 Assigned: PWD Team #247
+📅 Filed: 2 days ago
+🕒 ETA: 24 hours
+
+*Updates will be sent automatically* ✅"""
+        
+        send_text_message(from_number, response)
+    
+    # Default response
+    else:
+        response = f"""You said: _{text}_
+
+*Available Commands:*
+• *complaint* - File issue
+• *status* - Check updates
+• *help* - Full menu
+• *urgent* - Emergency
+
+Type any command to continue!"""
+        
+        send_text_message(from_number, response)

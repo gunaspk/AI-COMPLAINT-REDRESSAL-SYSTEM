@@ -1,0 +1,36 @@
+def handle_location_message(from_number, location_data, message_id):
+    """Generate complaint with location"""
+    latitude = location_data.get("latitude")
+    longitude = location_data.get("longitude")
+    
+    send_reaction(from_number, message_id, "📍")
+    
+    # Generate complaint ID
+    complaint_id = generate_complaint_id()
+    
+    response = f"""✅ *Complaint Registered Successfully!*
+
+🆔 *Complaint ID:* {complaint_id}
+📍 *Location:* Lat {latitude}, Long {longitude}
+🏙️ *Area:* Auto-detected via GPS
+📂 *Category:* Auto-assigned by AI
+⏰ *Priority:* Standard (24-48 hours)
+
+*What happens next:*
+1. Department notification sent
+2. Field verification scheduled
+3. You'll receive SMS updates
+4. Completion confirmation
+
+*Track anytime:* Send your complaint ID"""
+    
+    send_text_message(from_number, response)
+    
+    # Store in Firebase
+    store_complaint_in_database(from_number, complaint_id, latitude, longitude)
+
+def generate_complaint_id():
+    """Generate unique complaint ID"""
+    import datetime
+    timestamp = datetime.datetime.now().strftime('%Y%m%d%H%M')
+    return f"CMP-{timestamp}-{random.randint(100, 999)}"
